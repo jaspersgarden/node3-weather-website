@@ -12,7 +12,10 @@ const forecast = (lat, lon, callback) => {
             callback(undefined, {
                 description: body.daily[0].weather[0].description,
                 tempurature: body.current.temp,
-                clouds: body.current.clouds
+                clouds: body.current.clouds,
+                windspeed: body.current.wind_speed,
+                temphi: body.daily[0].temp.max,
+                templo: body.daily[0].temp.min
             })
         }
     })
